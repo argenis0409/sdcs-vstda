@@ -45,7 +45,6 @@ export default class App extends Component {
   editTodo(todoIndex, todo) {
     const todos = [...this.state.todos];
     todos[todoIndex] = todo;
-    this.setState({ todos });
   }
 
   deleteTodo(todo, index) {
@@ -70,7 +69,6 @@ export default class App extends Component {
                 <textarea className='create-todo-text' name='description' id='description' value={this.state.description} onChange={this.handleChange}></textarea>
                 <p />
 
-
                 <label>How much of a priority is this?</label>
                 <select className='create-todo-priority' name='priority' id='priority' value={this.state.priority} onChange={this.handleChange}>
                   <option value='0'>Select a priority</option>
@@ -90,7 +88,7 @@ export default class App extends Component {
           <div className='col-sm-8'>
             <div className='panel panel-default'>
               <div className='panel-heading'>View todos</div>
-              <div className='panel-body bg-info' id='panel'>
+              <div className='panel-body bg-info'>
                 {!this.state.todos.length && (
                   <div>
                     <strong>Welcome To a Very Simple To Do App!</strong>
@@ -116,7 +114,6 @@ export default class App extends Component {
     );
   }
 }
-
 
 
 class TodoList extends Component {
